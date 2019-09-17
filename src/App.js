@@ -1,8 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
 import styled from "styled-components";
 import useInput from './hooks/useInput.js';
 import useForm from './hooks/useForm.js';

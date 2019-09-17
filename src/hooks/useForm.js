@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef} from "react";
+import { useState } from "react";
 
 export const useForm = () => {
 
@@ -19,7 +19,7 @@ export const useForm = () => {
         onSubmit: async e => {
             console.log('submit');
             e.preventDefault(); // Prevent default form submission
-            let formValid = await validateFields();
+            validateFields();
         },
         addField: field => fields.push(field),
         isFormValid
