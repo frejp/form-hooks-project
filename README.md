@@ -1,15 +1,11 @@
+[![Build Status](https://travis-ci.org/frejp/form-hooks-project.svg?branch=master)](https://travis-ci.org/frejp/form-hooks-project)
+
 ## Description
 
-Form, with custom-made React Hooks and Reactstrap
+Form, with custom-made React Hooks and Bootstrap, Reactstrap
 
 Forms in React are cumbersome and can get ugly quick.
 Doing it with Hooks increased readability, plus, the hooks are reusable (we avoid duplicated logic).
-
-This project has 2 App files.
-App.js (using bootstrap with html and css)
-AppWithReactStrap (using react-strap i.e react components)
-
-Look how (reactstrap) increased readability.
 
 ## Future
 

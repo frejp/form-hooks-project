@@ -1,12 +1,15 @@
 import React from 'react';
+import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Form, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
 import styled from "styled-components";
 import useInput from './hooks/useInput.js';
 import useForm from './hooks/useForm.js';
 import { validateEmail } from './helpers.js';
 
 const Errors = ({errors}) => {
+    console.log(errors);
     return errors.map((error) => {
         return (
             <div>
@@ -17,7 +20,9 @@ const Errors = ({errors}) => {
 };
 
 const SuccessMessage = ({shouldRender}) => {
-    return shouldRender ? <div className="alert alert-success fade show" role="alert">This is a success message!</div> : null;
+    return shouldRender ? <Alert color="success">
+        This is a success alert — check it out!
+    </Alert> : null;
 };
 
 export const Wrapper = styled.div`
@@ -53,43 +58,29 @@ function App() {
         validations: [
             value =>
             value.length < 21 && "Text must be at least 20 characters"
-        ]
-    });
+        ]});
 
     return (
         <Wrapper>
-            <form onSubmit={form.onSubmit} className="form-extra-style">
-                <div className="form-group">
-                    <label htmlFor="input-text" className="">Input Text</label>
-                    <input name="input-text"
-                           id="input-text"
-                           placeholder="This is input text"
-                           type="text" className="form-control"
-                        {...bindInputTextField}
-                    />
+            <Form onSubmit={form.onSubmit} className="form-extra-style">
+                <FormGroup>
+                    <Label for="input-text">Input Text</Label>
+                    <Input {...bindInputTextField} type="text" name="input-text" id="input-text" placeholder="This is input text" />
                     <Errors errors={inputTextFieldErrors} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email" className="">Email</label>
-                    <input name="email" id="email"
-                           placeholder="email"
-                           type="text"
-                           className="form-control"
-                        {...bindEmailField} />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="email">Email</Label>
+                    <Input {...bindEmailField} type="text" name="email" id="email" placeholder="email" />
                     <Errors errors={emailFieldErrors} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="exampleText" className="">Text Area</label>
-                    <textarea name="text"
-                              id="exampleText"
-                              className="form-control"
-                        {...bindTextAreaField} >
-                    </textarea>
+                </FormGroup>
+                <FormGroup>
+                    <Label for="exampleText">Text Area</Label>
+                    <Input {...bindTextAreaField}  type="textarea" name="text" id="exampleText" />
                     <Errors errors={textAreaFieldErrors} />
-                </div>
+                </FormGroup>
                 <SuccessMessage shouldRender={form.isFormValid} />
-                <button className="btn btn-secondary">Submit</button>
-            </form>
+                <Button>Submit</Button>
+            </Form>
         </Wrapper>
     );
 }
