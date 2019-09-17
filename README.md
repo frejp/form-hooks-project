@@ -1,3 +1,22 @@
+## Description
+
+Form, with custom-made React Hooks and Reactstrap
+
+Forms in React are cumbersome and can get ugly quick.
+Doing it with Hooks increased readability, plus, the hooks are reusable (we avoid duplicated logic).
+
+This project has 2 App files.
+App.js (using bootstrap with html and css)
+AppWithReactStrap (using react-strap i.e react components)
+
+Look how (reactstrap) increased readability.
+
+## Future
+
+Make a hook library for forms.
+
+-------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
