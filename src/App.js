@@ -17,7 +17,7 @@ const Errors = ({errors}) => {
 };
 
 const SuccessMessage = ({shouldRender}) => {
-    return shouldRender ? <div class="alert alert-success fade show" role="alert">This is a success message!</div> : null;
+    return shouldRender ? <div className="alert alert-success fade show" role="alert">This is a success message!</div> : null;
 };
 
 export const Wrapper = styled.div`
@@ -58,37 +58,37 @@ function App() {
 
     return (
         <Wrapper>
-            <form onSubmit={form.onSubmit} class="form-extra-style">
-                <div class="form-group">
-                    <label for="input-text" class="">Input Text</label>
+            <form onSubmit={form.onSubmit} className="form-extra-style">
+                <div className="form-group">
+                    <label htmlFor="input-text" className="">Input Text</label>
                     <input name="input-text"
                            id="input-text"
                            placeholder="This is input text"
-                           type="text" class="form-control"
+                           type="text" className="form-control"
                         {...bindInputTextField}
                     />
                     <Errors errors={inputTextFieldErrors} />
                 </div>
-                <div class="form-group">
-                    <label for="email" class="">Email</label>
+                <div className="form-group">
+                    <label htmlFor="email" className="">Email</label>
                     <input name="email" id="email"
                            placeholder="email"
                            type="text"
-                           class="form-control"
+                           className="form-control"
                         {...bindEmailField} />
                     <Errors errors={emailFieldErrors} />
                 </div>
-                <div class="form-group">
-                    <label for="exampleText" class="">Text Area</label>
+                <div className="form-group">
+                    <label htmlFor="exampleText" className="">Text Area</label>
                     <textarea name="text"
                               id="exampleText"
-                              class="form-control"
+                              className="form-control"
                         {...bindTextAreaField} >
                     </textarea>
                     <Errors errors={textAreaFieldErrors} />
                 </div>
                 <SuccessMessage shouldRender={form.isFormValid} />
-                <button class="btn btn-secondary">Submit</button>
+                <button className="btn btn-secondary">Submit</button>
             </form>
         </Wrapper>
     );
